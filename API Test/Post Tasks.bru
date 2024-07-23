@@ -1,0 +1,17 @@
+meta {
+  name: Post Tasks
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:5000/api/tasks
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  title: new task
+  description: task
+  projectID: 669ad06b4f6b1aaf36fc3896
+}

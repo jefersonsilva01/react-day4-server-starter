@@ -1,0 +1,16 @@
+meta {
+  name: Post Projects
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:5000/api/projects
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  title: test
+  description: test
+}

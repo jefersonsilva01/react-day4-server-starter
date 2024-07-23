@@ -26,9 +26,10 @@ router.post('/tasks', (req, res, next) => {
     project: req.body.projectID
   })
     .then(response => {
-      return Project.findByIdAndUpdate(req.body.projectID, {
-        $push: { tasks: response._id }
-      });
+      return Project.findOneAndUpdate(
+        { _id: req.body.projectID },
+        { $push: { tasks: response._id } }
+      );
     })
     .then(theResponse => {
       res.json(theResponse);

@@ -6,6 +6,7 @@ const express = require('express');
 const favicon = require('serve-favicon');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
+mongoose.set('useFindAndModify', false);
 const logger = require('morgan');
 const path = require('path');
 const cors = require('cors');
@@ -22,7 +23,11 @@ const cors = require('cors');
 // IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
 
 mongoose
-  .connect('mongodb://localhost:27017/project-management-server', { useNewUrlParser: true })
+  .connect('mongodb://localhost:27017/project-management-server',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
