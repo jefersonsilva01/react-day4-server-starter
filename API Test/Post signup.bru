@@ -1,0 +1,16 @@
+meta {
+  name: Post signup
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:5000/api/signup
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  username: jef
+  password: 12345678
+}

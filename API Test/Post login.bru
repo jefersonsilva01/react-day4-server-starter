@@ -1,0 +1,16 @@
+meta {
+  name: Post login
+  type: http
+  seq: 11
+}
+
+post {
+  url: http://localhost:5000/api/login
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  username: jef
+  password: 12345678
+}
